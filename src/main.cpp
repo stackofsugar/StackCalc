@@ -41,11 +41,11 @@ int main() {
     else if(CHOICE1 == 2) {
         askForOp("rectangle");
         if (OPERATION == 1) { // circumference
-
+            calcRect(1, 0, 0);
         } 
         else if (OPERATION == 2) // area
         {
-            
+            calcRect(2, 0, 0);
         }
         else {
             displayError();

@@ -60,10 +60,20 @@ void calcCircle(int CHOICE, int TEMP) {
 }
 
 void calcRect(int CHOICE, int TEMP, int TEMPT){
-                cout << "\nWe will now calculate the circumference of a rectangle \nPlease enter the sides: ";
-                cin >> TEMP;
-            cout << "Please enter the other side: ";
-                cin >> TEMPT;
-            Rectangle RECT1(TEMP, TEMPT);
-                cout << "\nThe result is: " << RECT1.calcRectCircum() << endl;
+    if (CHOICE == 1) {
+        cout << "\nWe will now calculate the circumference of a rectangle \nPlease enter the sides: ";
+    }
+    else {
+        cout << "\nWe will now calculate the area of a rectangle \nPlease enter the sides: ";
+    }
+    cin >> TEMP;
+    cout << "Please enter the other side: ";
+    cin >> TEMPT;
+    Rectangle RECT1(TEMP, TEMPT);
+    if (CHOICE == 1) {
+        cout << "\nThe result is: " << RECT1.calcRectCircum() << endl;
+    }
+    else {
+        cout << "\nThe result is: " << RECT1.calcRectArea() << endl;
+    }
 }
