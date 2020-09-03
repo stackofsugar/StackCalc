@@ -7,9 +7,10 @@ using namespace std;
 
 void askForOp(const char*);
 void displayError();
+void calcCircle(int, int);
 
 int CHOICE1, OPERATION;
-double TEMP;
+double TEMP, TEMPT;
 
 int main() {
     cout << "StackCalc \nA simple calculator for basic shapes \nCopyright (C) 2020 Stackofsugar, Some rights reserved\n" << endl;
@@ -21,18 +22,12 @@ int main() {
     if(CHOICE1 == 1) {
         askForOp("circle");
         if (OPERATION == 1) { // circumference
-            cout << "\nWe will now calculate the circumference of a circle \nPlease enter the radius: ";
-            cin >> TEMP;
-            Circle CIRCLE1(TEMP);
-            cout << "The result is: " << CIRCLE1.calcCircleCircum() << endl;
+            calcCircle(1, 0);
             return 0;
         } 
         else if (OPERATION == 2) // area
         {
-            cout << "\nWe will now calculate the area of a circle \nPlease enter the radius: ";
-            cin >> TEMP;
-            Circle CIRCLE1(TEMP);
-            cout << "\nThe result is: " << CIRCLE1.calcCircleArea() << endl;
+            calcCircle(2, 0);
             return 0;
         }
         else {
@@ -43,7 +38,12 @@ int main() {
     else if(CHOICE1 == 2) {
         askForOp("rectangle");
         if (OPERATION == 1) { // circumference
-
+            cout << "\nWe will now calculate the circumference of a rectangle \nPlease enter the sides: ";
+                cin >> TEMP;
+            cout << "\nPlease enter the other side: ";
+                cin >> TEMPT;
+            Rectangle RECT1(TEMP, TEMPT);
+                cout << "\nThe result is: " << RECT1.calcRectCircum() << endl;
         } 
         else if (OPERATION == 2) // area
         {

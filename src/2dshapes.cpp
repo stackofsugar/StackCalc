@@ -11,8 +11,8 @@ Circle::Circle(double x) {
 }
 
 double Circle::calcCircleCircum() {
-    return PI * RADIUS * 2;
-}
+    return (PI * RADIUS) + (PI * RADIUS); // sorry this is retarded
+}                                         // but it has bugs, so...
 
 double Circle::calcCircleArea() {
     return PI * RADIUS * RADIUS;
@@ -42,3 +42,14 @@ TriAr::TriAr(double x, double y) {
     BASE = x; HEIGHT = y;
 }
 
+void calcCircle(int CHOICE, int TEMP) {
+    cout << "\nWe will now calculate the circumference of a circle \nPlease enter the radius: ";
+    cin >> TEMP;
+    Circle CIRCLE1(TEMP);
+    if (CHOICE == 1) {
+        cout << "The result is: " << CIRCLE1.calcCircleCircum() << endl;
+    }
+    else {
+        cout << "The result is: " << CIRCLE1.calcCircleArea() << endl;
+    }
+}
