@@ -43,7 +43,12 @@ TriAr::TriAr(double x, double y) {
 }
 
 void calcCircle(int CHOICE, int TEMP) {
-    cout << "\nWe will now calculate the circumference of a circle \nPlease enter the radius: ";
+    if (CHOICE == 1) {
+        cout << "\nWe will now calculate the circumference of a circle \nPlease enter the radius: ";
+    }
+    else {
+       cout << "\nWe will now calculate the area of a circle \nPlease enter the radius: "; 
+    }
     cin >> TEMP;
     Circle CIRCLE1(TEMP);
     if (CHOICE == 1) {
@@ -52,4 +57,13 @@ void calcCircle(int CHOICE, int TEMP) {
     else {
         cout << "The result is: " << CIRCLE1.calcCircleArea() << endl;
     }
+}
+
+void calcRect(int CHOICE, int TEMP, int TEMPT){
+                cout << "\nWe will now calculate the circumference of a rectangle \nPlease enter the sides: ";
+                cin >> TEMP;
+            cout << "Please enter the other side: ";
+                cin >> TEMPT;
+            Rectangle RECT1(TEMP, TEMPT);
+                cout << "\nThe result is: " << RECT1.calcRectCircum() << endl;
 }

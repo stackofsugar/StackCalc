@@ -5,9 +5,12 @@
 
 using namespace std;
 
+// Additional function declaration
 void askForOp(const char*);
 void displayError();
 void calcCircle(int, int);
+void calcRect(int, int, int);
+
 
 int CHOICE1, OPERATION;
 double TEMP, TEMPT;
@@ -38,12 +41,7 @@ int main() {
     else if(CHOICE1 == 2) {
         askForOp("rectangle");
         if (OPERATION == 1) { // circumference
-            cout << "\nWe will now calculate the circumference of a rectangle \nPlease enter the sides: ";
-                cin >> TEMP;
-            cout << "\nPlease enter the other side: ";
-                cin >> TEMPT;
-            Rectangle RECT1(TEMP, TEMPT);
-                cout << "\nThe result is: " << RECT1.calcRectCircum() << endl;
+
         } 
         else if (OPERATION == 2) // area
         {
