@@ -8,9 +8,9 @@ using namespace std;
 // Additional function declaration
 void askForOp(const char*);
 void displayError();
-void calcCircle(int, int);
-void calcRect(int, int, int);
-
+void calcCircle(int, double);
+void calcRect(int, double, double);
+void calcTri(int, double, double, double);
 
 int CHOICE1, OPERATION;
 double TEMP, TEMPT;

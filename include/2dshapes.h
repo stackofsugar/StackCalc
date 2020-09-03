@@ -22,23 +22,19 @@ class Rectangle {
 };
 
 ////////////////////////////////////////////// TRIANGLE FAMILY
-class Triangle {
-    public:
-        double calcTriCircum();
-        double calcTriArea();
-};
-
-class TriCir : public Triangle {
+class TriCir {
     protected:
         double SIDEx, SIDEy, SIDEz;
     public:
         TriCir(double, double, double);
+        double calcTriCircum();
 };
 
-class TriAr : public Triangle {
+class TriAr {
     protected:
         double BASE, HEIGHT;
     public:
         TriAr(double, double);
+        double calcTriArea();
 };
 ////////////////////////////////////////////// end of TRIANGLE FAMILY

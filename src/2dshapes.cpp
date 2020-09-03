@@ -6,6 +6,9 @@
 #define PI 3.14159265359
 using namespace std;
 
+void askCircum(const char*);
+void askArea(const char*);
+
 Circle::Circle(double x) {
     RADIUS = x;
 }
@@ -38,16 +41,24 @@ TriCir::TriCir(double x, double y, double z) {
     SIDEx = x; SIDEy = y; SIDEz=z;
 }
 
+double TriCir::calcTriCircum() {
+    return SIDEx + SIDEy + SIDEz;
+}
+
 TriAr::TriAr(double x, double y) {
     BASE = x; HEIGHT = y;
 }
 
-void calcCircle(int CHOICE, int TEMP) {
+double TriAr::calcTriArea() {
+    return (BASE * HEIGHT)/2;
+}
+
+void calcCircle(int CHOICE, double TEMP) {
     if (CHOICE == 1) {
-        cout << "\nWe will now calculate the circumference of a circle \nPlease enter the radius: ";
+        askCircum("circle");
     }
     else {
-       cout << "\nWe will now calculate the area of a circle \nPlease enter the radius: "; 
+       askArea("circle"); 
     }
     cin >> TEMP;
     Circle CIRCLE1(TEMP);
@@ -59,12 +70,12 @@ void calcCircle(int CHOICE, int TEMP) {
     }
 }
 
-void calcRect(int CHOICE, int TEMP, int TEMPT){
+void calcRect(int CHOICE, double TEMP, double TEMPT){
     if (CHOICE == 1) {
-        cout << "\nWe will now calculate the circumference of a rectangle \nPlease enter the sides: ";
+        askCircum("rectangle");
     }
     else {
-        cout << "\nWe will now calculate the area of a rectangle \nPlease enter the sides: ";
+        askArea("rectangle");
     }
     cin >> TEMP;
     cout << "Please enter the other side: ";
@@ -76,4 +87,13 @@ void calcRect(int CHOICE, int TEMP, int TEMPT){
     else {
         cout << "\nThe result is: " << RECT1.calcRectArea() << endl;
     }
+}
+
+void calcTri(int CHOICE, double TEMP1, double TEMP2, double TEMP3);
+
+void askCircum(const char* CHOICE) {
+    cout << "\nWe will now calculate the circumference of a "<< CHOICE <<" \nPlease enter the sides: ";
+}
+void askArea(const char* CHOICE) {
+    cout << "\nWe will now calculate the area of a "<< CHOICE <<" \nPlease enter the sides: ";
 }
