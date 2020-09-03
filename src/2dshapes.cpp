@@ -6,8 +6,8 @@
 #define PI 3.14159265359
 using namespace std;
 
-void askCircum(const char*);
-void askArea(const char*);
+void askCircum(const char*, const char*);
+void askArea(const char*, const char*);
 
 Circle::Circle(double x) {
     RADIUS = x;
@@ -55,10 +55,10 @@ double TriAr::calcTriArea() {
 
 void calcCircle(int CHOICE, double TEMP) {
     if (CHOICE == 1) {
-        askCircum("circle");
+        askCircum("circle", "radius");
     }
     else {
-       askArea("circle"); 
+       askArea("circle", "radius"); 
     }
     cin >> TEMP;
     Circle CIRCLE1(TEMP);
@@ -72,10 +72,10 @@ void calcCircle(int CHOICE, double TEMP) {
 
 void calcRect(int CHOICE, double TEMP, double TEMPT){
     if (CHOICE == 1) {
-        askCircum("rectangle");
+        askCircum("rectangle", "side");
     }
     else {
-        askArea("rectangle");
+        askArea("rectangle", "side");
     }
     cin >> TEMP;
     cout << "Please enter the other side: ";
@@ -89,11 +89,30 @@ void calcRect(int CHOICE, double TEMP, double TEMPT){
     }
 }
 
-void calcTri(int CHOICE, double TEMP1, double TEMP2, double TEMP3);
-
-void askCircum(const char* CHOICE) {
-    cout << "\nWe will now calculate the circumference of a "<< CHOICE <<" \nPlease enter the sides: ";
+void calcTri(int CHOICE, double TEMP1, double TEMP2, double TEMP3) {
+    if (CHOICE == 1) {
+        askCircum("triangle", "side");
+        cin >> TEMP1;
+        cout << "Please enter another side: ";
+        cin >> TEMP2;
+        cout << "Please enter the last side: ";
+        cin >> TEMP3;
+            TriCir TRI1(TEMP1, TEMP2, TEMP3);
+        cout << "The result is: " << TRI1.calcTriCircum() << endl;
+    }
+    else {
+        askArea("triangle", "base");
+        cin >> TEMP1; // BASE
+        cout << "Please enter the height: ";
+        cin >> TEMP2;
+            TriAr TRI2(TEMP1, TEMP2);
+        cout << "The result is: " << TRI2.calcTriArea() << endl;
+    }
 }
-void askArea(const char* CHOICE) {
-    cout << "\nWe will now calculate the area of a "<< CHOICE <<" \nPlease enter the sides: ";
+
+void askCircum(const char* CHOICE, const char* CHOICE2) {
+    cout << "\nWe will now calculate the circumference of a "<< CHOICE <<" \nPlease enter the " << CHOICE2 <<": ";
+}
+void askArea(const char* CHOICE, const char* CHOICE2) {
+    cout << "\nWe will now calculate the area of a "<< CHOICE <<" \nPlease enter the " << CHOICE2 <<": ";
 }

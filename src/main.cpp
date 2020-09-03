@@ -55,11 +55,11 @@ int main() {
     else if(CHOICE1 == 3) {
         askForOp("triangle");
         if (OPERATION == 1) { // circumference
-
+            calcTri(1, 0, 0, 0);
         } 
         else if (OPERATION == 2) // area
         {
-            
+            calcTri(2, 0, 0, 0);
         }
         else {
             displayError();
@@ -76,7 +76,6 @@ void askForOp(const char* choice) {
     cout << "\nWhat " << choice << " operation do you want to calculate?" << endl;
     cout << "1. Circumference \n2. Area \nYour choice: ";
     cin >> OPERATION;
-    system("clear");
 }
 void displayError(){
     cerr << "You have entered an invalid value. We can't process your request." << endl;
