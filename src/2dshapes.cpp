@@ -55,7 +55,7 @@ void calcCircle(int CHOICE, double TEMP) {
         askCircum("circle", "radius");
     }
     else {
-       askArea("circle", "radius"); 
+        askArea("circle", "radius"); 
     }
     cin >> TEMP;
     Circle CIRCLE1(TEMP);
