@@ -1,7 +1,4 @@
-#include <iostream>
-#include <iomanip>
-#include <string>
-#include "../include/2dshapes.h"
+#include "../include/stdinc.h"
 
 #define PI 3.14159265359
 using namespace std;
