@@ -26,3 +26,5 @@ Supported shapes
 ### Check my other projects
 
 [My C++ learning repository](https://github.com/stackofsugar/thingistilltripped)
+
+### As of October 12, this project is abandoned.
